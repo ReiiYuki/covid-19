@@ -10,7 +10,7 @@ import InitTrackPage from './pages/InitTrackPage';
 
 const PageContainer = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@ const GlobalSheet = createGlobalStyle`
       right: 0;
     }
     .footer-wrapper {
-      height: 120px;
+      min-height: 120px;
       width: 100vw;
     }
   }
