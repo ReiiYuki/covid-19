@@ -9,8 +9,8 @@ import CountdownPage from './pages/CountdownPage';
 import InitTrackPage from './pages/InitTrackPage';
 
 const PageContainer = styled.div`
-  width: calc(100vw + 120px);
-  height: 100vh;
+  width: 100vw;
+  height: calc(100vh + 120px);
   display: flex;
   align-items: center;
   justify-content: center;
