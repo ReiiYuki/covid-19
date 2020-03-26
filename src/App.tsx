@@ -31,9 +31,12 @@ const GlobalSheet = createGlobalStyle`
       font-size: 12px;
       position: fixed;
       bottom: 8px;
+      left: 0;
+      right: 0;
     }
     .footer-wrapper {
       height: 120px;
+      width: 100vw;
     }
   }
 `
