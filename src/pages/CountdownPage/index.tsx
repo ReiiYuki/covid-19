@@ -28,13 +28,16 @@ const CountdownPage = ({ startDate, setStartDate }: Props) => {
         }
     }, [startDate])
 
+    const isLastDay = leftDays === 0
+    const isFuture = leftDays > 14
+
     return (
         <>  
             <Header
-                title={isFinish ? 'ยินดีด้วย ครบระยะกักตัวแล้ว':`เหลืออีก ${leftDays} วันจะครบระยะกักตัว`}
+                title={isFinish ? 'ยินดีด้วย ครบระยะกักตัวแล้ว': isLastDay ? 'วันสุดท้ายแล้ว!' : isFuture ? 'นี่มันอนาคต !' : `เหลืออีก ${leftDays} วันจะครบระยะกักตัว`}
                 icon={isFinish ? faCheckCircle : faHome}
-                color={isFinish ? 'success':'danger'}
-                subtitle={!isFinish ? 'อยู่บ้านไปก่อนนะ' : undefined}
+                color={isFinish ? 'success': isFuture ? 'success' : 'danger'}
+                subtitle={!isFinish ? isLastDay? 'อดทนนน' : isFuture ? undefined : 'อยู่บ้านไปก่อนน้าาา' : undefined}
             />
             <div className="buttons">
                 <button className="button is-primary" onClick={clearStartDate}>เปลี่ยนแปลงวันที่กักตัว</button>
