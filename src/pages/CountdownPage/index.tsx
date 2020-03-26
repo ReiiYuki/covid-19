@@ -1,7 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import dayjs from 'dayjs'
-import Header from '../../components/Header'
-import { faCheckCircle, faHome } from '@fortawesome/free-solid-svg-icons'
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
+
+import dayjs from 'dayjs';
+
+import {
+  faCheckCircle,
+  faHome,
+} from '@fortawesome/free-solid-svg-icons';
+
+import Header from '../../components/Header';
 
 interface Props {
     startDate: Date
@@ -14,6 +24,7 @@ const CountdownPage = ({ startDate, setStartDate }: Props) => {
 
     const clearStartDate = useCallback(() => {
         setStartDate(undefined)
+        localStorage.clear()
     }, [setStartDate])
 
     useEffect(() => {
