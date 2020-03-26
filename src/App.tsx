@@ -10,7 +10,7 @@ import InitTrackPage from './pages/InitTrackPage';
 
 const PageContainer = styled.div`
   width: 100vw;
-  height: calc(100vh + 120px);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +32,9 @@ const GlobalSheet = createGlobalStyle`
       position: fixed;
       bottom: 8px;
     }
+    .footer-wrapper {
+      height: 120px;
+    }
   }
 `
 
@@ -51,10 +54,12 @@ function App() {
     <PageContainer>
       <GlobalSheet />
       {startDate ? <CountdownPage startDate={startDate} setStartDate={setStartDate} /> : <InitTrackPage setStartDate={setStartDate} />}
-      <div className="credit">
-        <a className="github-button" href="https://github.com/reiiyuki/covid-19" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" data-show-count="true" aria-label="Star reiiyuki/covid-19 on GitHub">Star</a>
-        <p>Powered by Voraton Lertrattanapaisal</p>
-        <p>Idea by Panjarat Sirilapporn</p>
+      <div className="footer-wrapper">
+        <div className="credit">
+          <a className="github-button" href="https://github.com/reiiyuki/covid-19" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" data-show-count="true" aria-label="Star reiiyuki/covid-19 on GitHub">Star</a>
+          <p>Powered by Voraton Lertrattanapaisal</p>
+          <p>Idea by Panjarat Sirilapporn</p>
+        </div>
       </div>
     </PageContainer>
   );
