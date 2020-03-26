@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import styled, { createGlobalStyle } from 'styled-components'
-import InitTrackPage from './pages/InitTrackPage';
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import styled, { createGlobalStyle } from 'styled-components';
+
 import CountdownPage from './pages/CountdownPage';
+import InitTrackPage from './pages/InitTrackPage';
 
 const PageContainer = styled.div`
-  width: 100vw;
+  width: calc(100vw + 120px);
   height: 100vh;
   display: flex;
   align-items: center;
