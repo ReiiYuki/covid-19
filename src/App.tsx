@@ -2,6 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import Footer from './components/Footer';
 import useDateSelector from './hooks/useDateSelector';
 import ActivePage from './pages/ActivePage';
 import InitTrackPage from './pages/InitTrackPage';
@@ -24,13 +25,7 @@ function App() {
   return (
     <PageContainer>
       {currentPage}
-      <div className="footer-wrapper">
-        <div className="credit">
-          <a className="github-button" href="https://github.com/reiiyuki/covid-19" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" data-show-count="true" aria-label="Star reiiyuki/covid-19 on GitHub">Star</a>
-          <p>Powered by Voraton Lertrattanapaisal</p>
-          <p>Idea by Panjarat Sirilapporn</p>
-        </div>
-      </div>
+      <Footer />
     </PageContainer>
   );
 }
