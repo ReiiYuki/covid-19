@@ -1,15 +1,28 @@
+import 'bulma/css/bulma.css';
+import 'react-day-picker/lib/style.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import ReactGA from 'react-ga';
+
 import App from './App';
+import DateSelectorProvider from './components/DateSelectorProvider';
+import GlobalStyle from './GlobalStyle';
 import * as serviceWorker from './serviceWorker';
-import 'bulma/css/bulma.css'
-import 'react-day-picker/lib/style.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DateSelectorProvider>
+      <GlobalStyle />
+      <App />
+    </DateSelectorProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
+  () => {
+    ReactGA.initialize('UA-162058993')
+    ReactGA.pageview(window.location.pathname);
+  }
 );
 
 // If you want your app to work offline and load faster, you can change

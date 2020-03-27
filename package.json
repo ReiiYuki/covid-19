@@ -20,6 +20,7 @@
     "react": "^16.13.1",
     "react-day-picker": "^7.4.0",
     "react-dom": "^16.13.1",
+    "react-ga": "^2.7.0",
     "react-scripts": "3.4.1",
     "styled-components": "^5.0.1",
     "typescript": "~3.7.2"
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/facebook-js-sdk": "^3.3.0"
   }
 }
