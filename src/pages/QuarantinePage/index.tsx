@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
+import ActivitiesModal from '../../components/ActivitiesModal';
 import Header from '../../components/Header';
 import useDateSelector from '../../hooks/useDateSelector';
 
@@ -16,11 +17,14 @@ const QuarantinePage = () => {
 
     if (isFuture) {
         return (
-            <Header
-                title="นี่มันอนาคต !"
-                color="success"
-                icon={faHome}
-            />
+            <>
+                <Header
+                    title="นี่มันอนาคต !"
+                    color="success"
+                    icon={faHome}
+                />
+                <ActivitiesModal activities={['news']} />
+            </>
         )
     }
 
@@ -29,24 +33,30 @@ const QuarantinePage = () => {
 
     if (isLastDay) {
         return (
-            <Header
-                title="วันสุดท้ายแล้ว!"
-                color="danger"
-                subtitle="อดทนนน"
-                icon={faHome}
-                detail={releaseText}
-            />
+            <>
+                <Header
+                    title="วันสุดท้ายแล้ว!"
+                    color="danger"
+                    subtitle="อดทนนน"
+                    icon={faHome}
+                    detail={releaseText}
+                />
+                <ActivitiesModal activities={['foodOrder', 'record']} />
+            </>
         )
     }
 
     return (
-        <Header
-            title={`เหลืออีก ${leftDays} วัน จะครบระยะกักตัว`}
-            color="danger"
-            subtitle="อยู่บ้านไปก่อนน้าาา"
-            icon={faHome}
-            detail={releaseText}
-        />
+        <>
+            <Header
+                title={`เหลืออีก ${leftDays} วัน จะครบระยะกักตัว`}
+                color="danger"
+                subtitle="อยู่บ้านไปก่อนน้าาา"
+                icon={faHome}
+                detail={releaseText}
+            />
+            <ActivitiesModal activities={['foodOrder', 'record']} />
+        </>
     )
 }
 

@@ -8,6 +8,7 @@ import ReactGA from 'react-ga';
 
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
+import ActivitiesModal from '../../components/ActivitiesModal';
 import Header from '../../components/Header';
 import useDateSelector from '../../hooks/useDateSelector';
 import QuarantinePage from '../QuarantinePage';
@@ -33,11 +34,14 @@ const ActivePage = () => {
     }, [isFinish])
 
     const currentPage = isFinish ? (
-        <Header
-            title="ยินดีด้วย ครบระยะกักตัวแล้ว"
-            color="success"
-            icon={faCheckCircle}
-        />
+        <>
+            <Header
+                title="ยินดีด้วย ครบระยะกักตัวแล้ว"
+                color="success"
+                icon={faCheckCircle}
+            />
+            <ActivitiesModal activities={['news']} />
+        </>
     ) : <QuarantinePage />
 
     return (
