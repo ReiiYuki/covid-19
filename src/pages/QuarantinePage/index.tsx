@@ -17,14 +17,11 @@ const QuarantinePage = () => {
 
     if (isFuture) {
         return (
-            <>
-                <Header
-                    title="นี่มันอนาคต !"
-                    color="success"
-                    icon={faHome}
-                />
-                <ActivitiesModal activities={['news']} />
-            </>
+            <Header
+                title="นี่มันอนาคต !"
+                color="success"
+                icon={faHome}
+            />
         )
     }
 
