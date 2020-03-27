@@ -1,15 +1,19 @@
 import 'bulma/css/bulma.css';
+import 'dayjs/locale/th';
 import 'react-day-picker/lib/style.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import dayjs from 'dayjs';
 import ReactGA from 'react-ga';
 
 import App from './App';
 import DateSelectorProvider from './components/DateSelectorProvider';
 import GlobalStyle from './GlobalStyle';
 import * as serviceWorker from './serviceWorker';
+
+dayjs.locale('th')
 
 ReactDOM.render(
   <React.StrictMode>

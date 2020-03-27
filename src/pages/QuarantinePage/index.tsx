@@ -9,13 +9,8 @@ import useDateSelector from '../../hooks/useDateSelector';
 
 const QuarantinePage = () => {
     const { selectedDate } = useDateSelector()
-    const leftDays = useMemo(() => {
-        const today = dayjs()
-        const startDay = dayjs(selectedDate)
-        const endDay = startDay.add(14, 'day')
-
-        return endDay.diff(today, 'day')
-    }, [selectedDate])
+    const endDay = useMemo(() => dayjs(selectedDate).add(14, 'day'), [selectedDate])
+    const leftDays = useMemo(() => endDay.diff(dayjs(), 'day'), [endDay])
 
     const isFuture = leftDays > 14
 
@@ -30,6 +25,7 @@ const QuarantinePage = () => {
     }
 
     const isLastDay = leftDays === 0
+    const releaseText = `วันที่ ${endDay.format('D MMMM YYYY')} คุณจะเป็นอิสระ !`
 
     if (isLastDay) {
         return (
@@ -38,6 +34,7 @@ const QuarantinePage = () => {
                 color="danger"
                 subtitle="อดทนนน"
                 icon={faHome}
+                detail={releaseText}
             />
         )
     }
@@ -48,6 +45,7 @@ const QuarantinePage = () => {
             color="danger"
             subtitle="อยู่บ้านไปก่อนน้าาา"
             icon={faHome}
+            detail={releaseText}
         />
     )
 }
