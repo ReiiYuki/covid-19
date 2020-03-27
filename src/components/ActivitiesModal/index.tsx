@@ -53,6 +53,10 @@ const Text = styled.p`
     font-size: 16px;
 `
 
+const Button = styled.button`
+    min-width: 120px;
+`
+
 interface Props {
     activities: (keyof typeof ACTIVITIES)[]
 }
@@ -79,7 +83,7 @@ const ActivitiesModal = ({ activities }: Props) => {
                                         <Text>{text}</Text>
                                         <Action>
                                             <a href={url}>
-                                                <button className={`button is-${color}`} onClick={toggle}>{action}</button>
+                                                <Button className={`button is-${color}`} onClick={toggle}>{action}</Button>
                                             </a>
                                             <Credit>By {credit}</Credit>
                                         </Action>
