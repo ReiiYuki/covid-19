@@ -24,7 +24,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
   () => {
-    ReactGA.initialize('UA-162058993')
+    ReactGA.initialize('UA-162058993-1')
     ReactGA.pageview(window.location.pathname);
   }
 );
